@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Tarefinhas dos Alunos</title>
 
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1>✨ Tarefinhas dos Alunos ✨</h1>
+
+<div class="container">
+  <input type="text" id="taskInput" placeholder="Tarefa">
+
+  <select id="priority">
+    <option value="alta">Importante</option>
+    <option value="media">Média</option>
+    <option value="baixa">Não tão importante</option>
+  </select>
+
+  <input type="date" id="date">
+
+  <textarea id="obs" placeholder="Observações"></textarea>
+
+  <button onclick="addTask()">Adicionar</button>
+</div>
+
+<ul id="taskList"></ul>
+
+<script>
+function addTask() {
+  const text = document.getElementById("taskInput").value;
+  const priority = document.getElementById("priority").value;
+  const date = document.getElementById("date").value;
+  const obs = document.getElementById("obs").value;
+
+  if (text === "") return;
+
+  const li = document.createElement("li");
+
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+
+  checkbox.onclick = function() {
+    li.classList.toggle("done");
+  };
+
+  const tag = document.createElement("span");
+  tag.className = "tag " + priority;
+  tag.textContent = priority;
+
+  li.appendChild(checkbox);
+  li.innerHTML += " " + text + "<br>";
+  li.appendChild(tag);
+
+  if (date) {
+    li.innerHTML += "<br><small>Data: " + date + "</small>";
+  }
+
+  if (obs) {
+    li.innerHTML += "<br><small>Obs: " + obs + "</small>";
+  }
+
+  document.getElementById("taskList").appendChild(li);
+
+  document.getElementById("taskInput").value = "";
+  document.getElementById("obs").value = "";
+}
+</script>
+
+</body>
+</html>
