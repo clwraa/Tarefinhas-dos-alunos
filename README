@@ -1,1 +1,3 @@
-
+Vou criar um sistema simples de lista de tarefas (To-Do List). O usuário poderá adicionar tarefas, visualizar todas e marcar como concluídas. A interface será feita em HTML e estilizada com CSS. A ideia é deixar simples e fácil de usar, com um campo para digitar a tarefa e uma lista exibindo tudo.
+Usei a IA para entender melhor como adicionar tarefas com JavaScript e como mudar o estilo ao clicar. As decisões de layout e organização foram feitas por mim.
+A IA me ajudou principalmente na parte de lógica e revisão do código. Eu entendi como cada parte funciona e consegui explicar o funcionamento do sistema. As decisões principais, como estrutura e funcionamento, foram minhas.
